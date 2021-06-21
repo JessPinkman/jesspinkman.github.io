@@ -1,0 +1,19 @@
+.nav {
+  @media (max-width: 60rem) {
+    grid-template-areas: "logo responsive" "menu menu";
+    grid-template-columns: 3rem auto;
+    &_responsive_label {
+      display: block;
+      height: 3rem;
+      width: 3rem;
+    }
+    &_menu {
+      flex-direction: column;
+      & a {
+        overflow: hidden;
+        max-height: 0;
+        transition: 150ms max-height;
+      }
+    }
+  }
+}

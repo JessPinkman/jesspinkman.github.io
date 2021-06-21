@@ -1,0 +1,41 @@
+.nav {
+  grid-area: nav;
+  grid-template-columns: auto 1fr;
+  padding: 0.25rem 2rem;
+  background-color: blue;
+  align-items: center;
+  box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.2);
+  color: white;
+  border-bottom: 2px solid white;
+  &_logo {
+    & img {
+      border: 2px solid white;
+      width: 3rem;
+      height: 3rem;
+      object-fit: cover;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+  &_menu {
+    grid-area: menu;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .nav_menu_link {
+      font-weight: 900;
+      text-decoration: none;
+      color: inherit;
+      margin: 0 1rem 0 1rem;
+      text-transform: capitalize;
+      transition: 200ms background-color, 200ms color, 200ms max-height,
+        200ms margin-top;
+      border-radius: 4px;
+      font-size: 1.25rem;
+      &:hover {
+        animation: linkHover 200ms forwards;
+      }
+    }
+  }
+}
