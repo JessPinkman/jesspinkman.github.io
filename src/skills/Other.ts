@@ -4,33 +4,59 @@ import type { Skill } from "../types/types";
 const skills: Skill[] = [
   {
     title: "HTML",
-    type: SkillType.HTML,
+    type: SkillType.OTHER,
     level: Level.EXPERT,
   },
   {
     title: "CSS",
-    type: SkillType.CSS,
+    type: SkillType.OTHER,
     level: Level.PROFICIENT,
   },
   {
     title: "Sass",
-    type: SkillType.CSS,
+    type: SkillType.OTHER,
     level: Level.PROFICIENT,
   },
   {
     title: "MYSQL",
-    type: SkillType.SQL,
+    type: SkillType.OTHER,
     level: Level.PROFICIENT,
   },
   {
     title: "Bootstrap",
-    type: SkillType.CSS,
+    type: SkillType.OTHER,
     level: Level.PROFICIENT,
   },
   {
     title: "SEO",
-    type: SkillType.HTML,
+    type: SkillType.OTHER,
     level: Level.PROFICIENT,
+  },
+  {
+    title: "Linux",
+    type: SkillType.OTHER,
+    level: Level.PROFICIENT,
+  },
+  {
+    title: "WSL",
+    type: SkillType.OTHER,
+    level: Level.PROFICIENT,
+  },
+
+  {
+    title: "Apache",
+    type: SkillType.OTHER,
+    level: Level.PROFICIENT,
+  },
+  {
+    title: "Digital Ocean",
+    type: SkillType.OTHER,
+    level: Level.PROFICIENT,
+  },
+  {
+    title: "Google Cloud Console",
+    type: SkillType.OTHER,
+    level: Level.NOVICE,
   },
 ];
 

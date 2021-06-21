@@ -3,7 +3,7 @@ import type { Skill } from "../types/types";
 
 const skills: Skill[] = [
   {
-    title: "Javascript",
+    title: "Core Javascript (up to ES8)",
     type: SkillType.JS,
     level: Level.EXPERT,
   },

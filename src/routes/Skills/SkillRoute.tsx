@@ -1,42 +1,31 @@
-import { useEffect, useRef } from "react";
-import BaseChart from "../../charts/BaseChart";
-import skills from "../../skills/skills";
+import { useState } from "react";
 import { SkillType } from "../../types/enums";
+import useSkillChart from "./useSkillChart";
 
 const SkillRoute = () => {
-  const nodeRef = useRef<HTMLCanvasElement>(null!);
-  const chartRef = useRef<BaseChart>(null!);
+  const [selectedType, setSelectedType] = useState<SkillType>(SkillType.JS);
+  const { nodeRef } = useSkillChart(selectedType);
 
-  useEffect(() => {
-    chartRef.current = new BaseChart(nodeRef.current.getContext("2d")!, {
-      type: "bar",
-      data: {
-        datasets: [
-          {
-            label: SkillType.PHP,
-            backgroundColor: "blue",
-            data: skills.map((skill) =>
-              skill.type === SkillType.PHP ? skill.level : 0
-            ),
-          },
-          {
-            label: SkillType.JS,
-            backgroundColor: "green",
-            data: skills.map((skill) =>
-              skill.type === SkillType.JS ? skill.level : 0
-            ),
-          },
-        ],
-        labels: skills.map((skill) => skill.title),
-      },
-      options: {
-        indexAxis: "y",
-      },
-    });
-    return () => chartRef.current.destroy();
-  }, []);
+  const labels = Object.values(SkillType);
 
-  return <canvas ref={nodeRef} className="chart__skills" />;
+  return (
+    <div className="chart_container">
+      <div className="chart_container__skill_list">
+        {labels.map((label) => (
+          <button
+            className={`chart_container__skill_list_button ${
+              selectedType === label ? "selected" : null
+            }`}
+            key={label}
+            onClick={() => setSelectedType(label)}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+      <canvas ref={nodeRef} className="chart__skills" />
+    </div>
+  );
 };
 
 export default SkillRoute;

@@ -9,10 +9,7 @@ export enum Level {
 export enum SkillType {
   PHP = "PHP",
   JS = "Javascript",
-  TS = "Typescript",
-  CSS = "CSS",
-  HTML = "HTML",
-  SQL = "SQL",
+  OTHER = "Coding (Others)",
   LANGUAGE = "Spoken Language",
   MARKETING = "Strategic Marketing",
 }
