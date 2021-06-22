@@ -21,15 +21,9 @@ const links: LinkT[] = [
     inMenu: true,
   },
   {
-    label: "experience",
-    to: "/experience",
-    Render: () => <div>experience</div>,
-    inMenu: true,
-  },
-  {
-    label: "education",
-    to: "/education",
-    Render: () => <div>education</div>,
+    label: "Timeline",
+    to: "/timeline",
+    Render: () => <div>timeline</div>,
     inMenu: true,
   },
 ];

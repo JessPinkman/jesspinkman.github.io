@@ -14,6 +14,7 @@
     }
     gap: 2rem;
     &_chart {
+      padding: 0.5rem;
       position: relative;
       margin: 0;
     }
@@ -29,7 +30,7 @@
         background-color: rgba(191, 191, 252, 0.3);
         animation: 200ms smoothIn ease-in 0s 1 forwards;
         &_label {
-          color: rgb(145, 145, 255);
+          color: colors.$primary;
           text-align: left;
         }
       }

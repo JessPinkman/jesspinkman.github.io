@@ -4,5 +4,10 @@
     &_btn {
       display: none;
     }
+    &_menu {
+      & .nav_menu_link {
+        padding: 0.25rem 0.5rem;
+      }
+    }
   }
 }

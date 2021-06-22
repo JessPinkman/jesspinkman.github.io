@@ -19,7 +19,7 @@ const SkillRoute = () => {
   const labels = Object.values(SkillType);
 
   return (
-    <div className="skill__chart">
+    <div className="skill__chart page">
       <div className="skill__chart_filter">
         {labels.map((label) => (
           <button
@@ -62,6 +62,7 @@ const SkillRoute = () => {
             })}
         </div>
       </div>
+      <h1 className="ta--center mt:2">...And learning more every day</h1>
     </div>
   );
 };
