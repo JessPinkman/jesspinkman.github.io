@@ -3,10 +3,13 @@ import { render } from "react-dom";
 import "normalize.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router } from "react-router-dom";
 
 render(
   <StrictMode>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </StrictMode>,
   document.getElementById("root")
 );

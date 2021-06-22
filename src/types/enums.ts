@@ -4,6 +4,7 @@ export enum Level {
   PROFICIENT,
   EXPERT,
   MASTER,
+  END,
 }
 
 export enum SkillType {

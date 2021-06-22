@@ -1,19 +1,64 @@
 .nav {
   @media (max-width: 60rem) {
-    grid-template-areas: "logo responsive" "menu menu";
+    grid-template-areas: "logo btn" "menu menu";
     grid-template-columns: 3rem auto;
-    &_responsive_label {
+    &_btn {
       display: block;
       height: 3rem;
       width: 3rem;
     }
     &_menu {
       flex-direction: column;
-      & a {
-        overflow: hidden;
-        max-height: 0;
-        transition: 150ms max-height;
+    }
+    &.show * {
+      &.nav_btn > div {
+        & > div {
+          &:first-child,
+          &:last-child {
+            transform: scaleX(0);
+          }
+          &:nth-child(2) {
+            transform: rotate(45deg);
+          }
+          &:nth-child(3) {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+      &.nav_menu_link {
+        animation: 200ms fadeIn ease-in 0s 1 forwards;
       }
     }
+    &.nav:not(.show) * {
+      &.nav_menu_link {
+        animation: 200ms fadeOut ease-in 0s 1 forwards;
+      }
+    }
+  }
+}
+
+.nav_menu_link {
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 32px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    max-height: 32px;
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
   }
 }

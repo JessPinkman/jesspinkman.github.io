@@ -13,7 +13,7 @@ const PHPSkills: Skill[] = [
     level: Level.EXPERT,
   },
   {
-    title: "OOP (class, traits, interfaces, ...)",
+    title: "OOP",
     type: SkillType.PHP,
     level: Level.PROFICIENT,
   },

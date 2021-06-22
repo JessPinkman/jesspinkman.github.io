@@ -3,7 +3,7 @@ import type { Skill } from "../types/types";
 
 const skills: Skill[] = [
   {
-    title: "Core Javascript (up to ES8)",
+    title: "JS (up to ES8)",
     type: SkillType.JS,
     level: Level.EXPERT,
   },
@@ -53,7 +53,7 @@ const skills: Skill[] = [
     level: Level.PROFICIENT,
   },
   {
-    title: "Dynamic GoogleMaps",
+    title: "GoogleMaps API",
     type: SkillType.JS,
     level: Level.EXPERT,
   },

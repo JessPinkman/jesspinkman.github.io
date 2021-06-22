@@ -5,12 +5,12 @@ const skills: Skill[] = [
   {
     title: "Marketing Mix",
     type: SkillType.MARKETING,
-    level: Level.PROFICIENT,
+    level: Level.EXPERT,
   },
   {
     title: "Brand positioning",
     type: SkillType.MARKETING,
-    level: Level.PROFICIENT,
+    level: Level.MASTER,
   },
   {
     title: "Market Research",
@@ -20,7 +20,7 @@ const skills: Skill[] = [
   {
     title: "Market Analysis",
     type: SkillType.MARKETING,
-    level: Level.PROFICIENT,
+    level: Level.EXPERT,
   },
 ];
 

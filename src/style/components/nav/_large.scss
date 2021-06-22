@@ -1,7 +1,7 @@
 .nav {
   @media (min-width: 60rem) {
     grid-template-areas: "logo menu";
-    &_responsive_label {
+    &_btn {
       display: none;
     }
   }
