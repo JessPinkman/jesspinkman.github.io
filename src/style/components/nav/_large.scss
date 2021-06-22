@@ -1,8 +1,0 @@
-.nav {
-  @media (min-width: 60rem) {
-    grid-template-areas: "logo menu";
-    &_btn {
-      display: none;
-    }
-  }
-}
