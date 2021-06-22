@@ -1,0 +1,65 @@
+@use "../../config/colors";
+
+.skill__chart {
+  &,
+  & * {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  &_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media (max-width: 60rem) {
+      grid-template-columns: 100%;
+    }
+    gap: 2rem;
+    &_chart {
+      position: relative;
+      margin: 0;
+    }
+    &_list {
+      text-align: center;
+      align-self: center;
+      padding: 1rem;
+      &_item {
+        padding: 1rem;
+        border-radius: 4px;
+        box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.2);
+        margin-bottom: 2rem;
+        background-color: rgba(191, 191, 252, 0.3);
+        animation: 200ms smoothIn ease-in 0s 1 forwards;
+        &_label {
+          color: rgb(145, 145, 255);
+          text-align: left;
+        }
+      }
+    }
+  }
+  &_filter {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+    &_button {
+      cursor: pointer;
+      background-color: colors.$primary;
+      color: colors.$inactive;
+      border: none;
+      padding: 0.25rem 0.5rem;
+      &.selected {
+        background-color: colors.$active;
+        color: colors.$primary;
+      }
+    }
+  }
+}
+
+@keyframes smoothIn {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
