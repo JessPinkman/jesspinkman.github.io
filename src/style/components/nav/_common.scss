@@ -1,18 +1,19 @@
 @use "../../config/colors";
+@use "../../utilities/effects";
 
 .nav {
   grid-area: nav;
   grid-template-columns: auto 1fr;
-  padding: 0.125rem 2rem;
+  padding: 0.25rem 2rem;
   background-color: colors.$primary;
   align-items: center;
-  box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.2);
+  @include effects.shadow;
   color: colors.$special;
   border-bottom: 2px solid white;
   &_logo {
     & img {
-      width: 4rem;
-      height: 4rem;
+      width: 5rem;
+      height: 5rem;
       object-fit: cover;
       border-radius: 50%;
       overflow: hidden;

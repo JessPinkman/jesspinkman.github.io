@@ -22,8 +22,9 @@ const useSkillChart = (skillList: Skill[]) => {
   useEffect(() => {
     chartRef.current.data.datasets = [
       {
-        backgroundColor: "#004420aa",
+        backgroundColor: "#52e08b",
         data: skillList.map((skill) => skill.level),
+        barThickness: 10,
       },
     ];
     chartRef.current.data.labels = skillList.map((skill) => skill.title);
@@ -50,6 +51,9 @@ const chartOptions: ChartOptions = {
   },
   scales: {
     x: {
+      grid: {
+        display: false,
+      },
       min: 0,
       max: Level.END - 1,
       ticks: {

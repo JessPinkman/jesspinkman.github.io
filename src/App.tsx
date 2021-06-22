@@ -1,7 +1,8 @@
 import "./style/app.scss";
-import { Switch, Route, Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import links from "./routes/links";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   const location = useLocation();
@@ -23,13 +24,7 @@ function App() {
           ))}
       </NavBar>
       <main>
-        <Switch>
-          {links.map((link) => (
-            <Route path={link.to} key={link.to} exact>
-              <link.Render />
-            </Route>
-          ))}
-        </Switch>
+        <AppRoutes />
       </main>
       <footer />
     </>

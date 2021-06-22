@@ -3,7 +3,7 @@ import type { Skill } from "../types/types";
 
 const PHPSkills: Skill[] = [
   {
-    title: "Core PHP (up to 8.0)",
+    title: "Core PHP (^8.0)",
     type: SkillType.PHP,
     level: Level.EXPERT,
   },

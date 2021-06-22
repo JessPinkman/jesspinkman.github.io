@@ -62,7 +62,7 @@ const SkillRoute = () => {
             })}
         </div>
       </div>
-      <h1 className="ta--center mt:2">...And learning more every day</h1>
+      <h3 className="ta--center mt:2">...And learning more every day</h3>
     </div>
   );
 };

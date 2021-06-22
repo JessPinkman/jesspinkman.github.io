@@ -1,4 +1,5 @@
 @use "../../config/colors";
+@use "../../utilities/effects";
 
 .skill__chart {
   &,
@@ -13,10 +14,14 @@
       grid-template-columns: 100%;
     }
     gap: 2rem;
+    padding: 2rem;
     &_chart {
+      background-color: white;
       padding: 0.5rem;
       position: relative;
       margin: 0;
+      border-radius: 4px;
+      @include effects.shadow;
     }
     &_list {
       text-align: center;
@@ -25,13 +30,14 @@
       &_item {
         padding: 1rem;
         border-radius: 4px;
-        box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.2);
+        @include effects.shadow;
         margin-bottom: 2rem;
         background-color: rgba(191, 191, 252, 0.3);
         animation: 200ms smoothIn ease-in 0s 1 forwards;
         &_label {
           color: colors.$primary;
           text-align: left;
+          font-weight: 700;
         }
       }
     }

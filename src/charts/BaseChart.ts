@@ -24,8 +24,8 @@ Chart.register(
   Legend
 );
 
-Chart.defaults.font.size = 10;
-Chart.defaults.color = "#ffffff";
+Chart.defaults.font.size = 14;
+Chart.defaults.color = "#182628";
 
 class BaseChart extends Chart {
   constructor(ctx: CanvasRenderingContext2D, config: ChartConfiguration) {
