@@ -9,7 +9,6 @@ const AppRoutes = () => {
           <link.Render />
         </Route>
       ))}
-      <Route path="/">Home</Route>
     </Switch>
   );
 };

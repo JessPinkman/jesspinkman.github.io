@@ -1,5 +1,5 @@
-import { Level, SkillType } from "../types/enums";
-import type { Skill } from "../types/types";
+import { Level, SkillType } from "../../types/enums";
+import type { Skill } from "../../types/types";
 
 const skills: Skill[] = [
   {

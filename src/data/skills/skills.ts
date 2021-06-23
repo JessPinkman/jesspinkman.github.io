@@ -1,4 +1,4 @@
-import type { Skill } from "../types/types";
+import type { Skill } from "../../types/types";
 import PHPSkills from "./PHP";
 import JSSkills from "./JS";
 import OtherSkills from "./Other";

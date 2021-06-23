@@ -1,0 +1,37 @@
+@use "../../utilities/effects";
+@use "../../config/colors";
+
+.card__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 4px;
+  @include effects.shadow;
+  background-color: rgba(191, 191, 252, 0.3);
+  animation: 200ms smoothIn ease-in 0s 1 forwards;
+  &.active {
+    background-color: colors.$active;
+  }
+  &__label {
+    color: colors.$primary;
+    text-align: left;
+    font-weight: 700;
+  }
+  &__text {
+    text-align: center;
+  }
+}
+
+@keyframes smoothIn {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}

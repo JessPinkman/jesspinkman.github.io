@@ -1,7 +1,6 @@
-import { ChartOptions } from "chart.js";
 import { useEffect, useRef } from "react";
 import BaseChart from "../../charts/BaseChart";
-import { Level } from "../../types/enums";
+import SkillChart from "../../charts/SkillChart";
 import type { Skill } from "../../types/types";
 
 const useSkillChart = (skillList: Skill[]) => {
@@ -9,13 +8,7 @@ const useSkillChart = (skillList: Skill[]) => {
   const chartRef = useRef<BaseChart>(null!);
 
   useEffect(() => {
-    chartRef.current = new BaseChart(nodeRef.current.getContext("2d")!, {
-      type: "bar",
-      data: {
-        datasets: [],
-      },
-      options: { ...chartOptions },
-    });
+    chartRef.current = new SkillChart(nodeRef.current.getContext("2d")!);
     return () => chartRef.current.destroy();
   }, []);
 
@@ -32,38 +25,6 @@ const useSkillChart = (skillList: Skill[]) => {
   }, [skillList]);
 
   return { nodeRef };
-};
-
-const chartOptions: ChartOptions = {
-  indexAxis: "y",
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    tooltip: {
-      enabled: false,
-    },
-    title: {
-      display: false,
-    },
-    legend: {
-      display: false,
-    },
-  },
-  scales: {
-    x: {
-      grid: {
-        display: false,
-      },
-      min: 0,
-      max: Level.END - 1,
-      ticks: {
-        stepSize: 1,
-        callback: (level) =>
-          Object.entries(Level).find(([, val]) => val === level)?.[0] ?? "",
-      },
-    },
-    y: {},
-  },
 };
 
 export default useSkillChart;

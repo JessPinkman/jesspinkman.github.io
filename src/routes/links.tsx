@@ -1,3 +1,5 @@
+import HistoryRoute from "./History/HistoryRoute";
+import Home from "./Home/HomeRoute";
 import SkillRoute from "./Skills/SkillRoute";
 
 interface LinkT {
@@ -11,7 +13,7 @@ const links: LinkT[] = [
   {
     label: "Home",
     to: "/",
-    Render: () => <div>Home</div>,
+    Render: Home,
     inMenu: false,
   },
   {
@@ -21,9 +23,9 @@ const links: LinkT[] = [
     inMenu: true,
   },
   {
-    label: "Timeline",
-    to: "/timeline",
-    Render: () => <div>timeline</div>,
+    label: "history",
+    to: "/history",
+    Render: HistoryRoute,
     inMenu: true,
   },
 ];

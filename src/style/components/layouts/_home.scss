@@ -1,0 +1,28 @@
+@use "../../utilities/effects";
+
+.route__home {
+  padding: 1rem;
+  &_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media (max-width: 60rem) {
+      grid-template-columns: 1fr;
+    }
+    place-items: center;
+    &_tile {
+      text-align: center;
+      & img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        transition: 150ms transform;
+        border-radius: 4px;
+        @include effects.shadow;
+        overflow: hidden;
+        &:hover {
+          transform: translateY(-4px);
+        }
+      }
+    }
+  }
+}

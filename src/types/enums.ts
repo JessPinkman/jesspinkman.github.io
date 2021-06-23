@@ -9,8 +9,20 @@ export enum Level {
 
 export enum SkillType {
   PHP = "PHP",
-  JS = "Javascript",
+  JS = "JS",
   OTHER = "Coding (Others)",
-  LANGUAGE = "Spoken Language",
+  LANGUAGE = "Spoken Lang.",
   MARKETING = "Strategic Marketing",
+}
+
+export enum HistoryType {
+  EDU = "education",
+  JOB = "work experience",
+}
+
+export enum Country {
+  FR = "France",
+  CA = "Canada",
+  PRT = "Portugal",
+  TW = "Taiwan",
 }

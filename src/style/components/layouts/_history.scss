@@ -1,0 +1,18 @@
+@use "../../utilities/effects";
+
+.route__history {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  grid-template-rows: 60vh;
+  gap: 1rem;
+  &_map {
+    @include effects.shadow;
+    border-radius: 4px;
+    overflow: hidden;
+    & button {
+      display: none;
+    }
+  }
+}
