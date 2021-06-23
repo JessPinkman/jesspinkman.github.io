@@ -5,22 +5,30 @@
   &_grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: stretch;
+    grid-template-rows: 70vh;
     @media (max-width: 60rem) {
       grid-template-columns: 1fr;
     }
     &_tile {
+      height: 100%;
+      padding: 1rem;
       text-align: center;
       overflow: hidden;
-      & img {
-        width: 100%;
-        object-fit: contain;
-        transition: 150ms transform;
-        border-radius: 4px;
-        @include effects.shadow;
+      display: flex;
+      flex-direction: column;
+      & a {
+        flex-grow: 1;
         overflow: hidden;
+        border-radius: 4px;
+        transition: 150ms transform;
+        @include effects.shadow;
         &:hover {
           transform: translateY(-4px);
+        }
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
     }

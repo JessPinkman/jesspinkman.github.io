@@ -25,10 +25,14 @@ body {
   grid-template-areas: "nav" "main" "footer";
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  align-items: stretch;
 }
 
 main {
   grid-area: main;
+  & > div {
+    height: 100%;
+  }
 }
 
 footer {

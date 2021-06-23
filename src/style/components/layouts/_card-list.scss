@@ -25,6 +25,38 @@
   &__text {
     text-align: center;
   }
+  &-history {
+    transition: 200ms filter;
+    &_content {
+      max-height: 0;
+      overflow: hidden;
+    }
+    &.active {
+      flex-grow: 1;
+      & > .card-history_content {
+        max-height: 10rem;
+      }
+    }
+    &:not(.active) {
+      &:hover {
+        cursor: pointer;
+        filter: brightness(0.7);
+      }
+    }
+    display: grid;
+    flex-direction: column;
+    &_header {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
+      &_company {
+        text-align: right;
+      }
+    }
+    &_content {
+      transition: 200ms max-height;
+    }
+  }
 }
 
 @keyframes smoothIn {

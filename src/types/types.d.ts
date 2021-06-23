@@ -16,7 +16,7 @@ export interface History {
   title: string;
   start: Date;
   end?: Date;
-  description?: string;
+  description: Description;
   special?: string;
   at: Entity;
 }
@@ -31,4 +31,9 @@ export interface Entity {
 export interface ContactPerson {
   name: string;
   email: string;
+}
+interface Description {
+  main: string;
+  lines: string[];
+  link?: string;
 }

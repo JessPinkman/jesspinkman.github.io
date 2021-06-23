@@ -4,17 +4,16 @@ import Marker from "./Marker";
 import entities from "../../data/history/entities";
 import { useEffect } from "react";
 import { fromLonLat } from "ol/proj";
+import history from "../../data/history/history";
 
 const MapTile = ({ selected, handleClick }: WithHistorySelection) => {
   const { hookRef, vector, view } = useMapHook();
 
   useEffect(() => {
     if (!selected) {
-      view.animate({
-        center,
-        zoom: 3,
-      });
+      view.animate({ ...initialViewSettings });
     }
+    // eslint-disable-next-line
   }, [selected]);
 
   return (
@@ -31,6 +30,9 @@ const MapTile = ({ selected, handleClick }: WithHistorySelection) => {
   );
 };
 
-export const center = fromLonLat([60, 35]);
+export const initialViewSettings = {
+  center: fromLonLat(history[0].at.location.coord),
+  zoom: 8,
+};
 
 export default MapTile;

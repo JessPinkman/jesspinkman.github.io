@@ -35,6 +35,7 @@ const Marker = ({ coord, vector, view, isFocus }: Props) => {
     feature.setStyle(style);
     vector.addFeature(feature);
     return () => vector.removeFeature(feature);
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -44,12 +45,18 @@ const Marker = ({ coord, vector, view, isFocus }: Props) => {
           zoom: 5,
         },
         () =>
-          view.animate({
-            center: fromLonLat(coord),
-            zoom: 8,
-          })
+          view.animate(
+            {
+              center: fromLonLat(coord),
+            },
+            () =>
+              view.animate({
+                zoom: 8,
+              })
+          )
       );
     }
+    // eslint-disable-next-line
   }, [isFocus]);
 
   return null;
