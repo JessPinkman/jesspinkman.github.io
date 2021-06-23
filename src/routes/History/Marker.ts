@@ -6,7 +6,6 @@ import Style from "ol/style/Style";
 import type { Vector } from "ol/source";
 import Icon from "ol/style/Icon";
 import View from "ol/View";
-import { center } from "./MapTile";
 
 interface Props {
   coord: [number, number];
@@ -42,7 +41,7 @@ const Marker = ({ coord, vector, view, isFocus }: Props) => {
     if (isFocus) {
       view.animate(
         {
-          zoom: 3,
+          zoom: 5,
         },
         () =>
           view.animate({

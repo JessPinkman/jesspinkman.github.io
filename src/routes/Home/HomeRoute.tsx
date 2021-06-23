@@ -10,6 +10,16 @@ const Home = () => {
             <img src="/img/skills.png" alt="" className="route__home_grid_bg" />
           </Link>
         </div>
+        <div className="route__home_grid_tile">
+          <h1 className="route__home_grid_title">History</h1>
+          <Link to="/history">
+            <img
+              src="/img/history.png"
+              alt=""
+              className="route__home_grid_bg"
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );
