@@ -54,6 +54,11 @@ const skills: Skill[] = [
     level: Level.PROFICIENT,
   },
   {
+    title: "Google Analytics",
+    type: SkillType.OTHER,
+    level: Level.INTERMEDIATE,
+  },
+  {
     title: "Google Cloud Platform",
     type: SkillType.OTHER,
     level: Level.NOVICE,

@@ -1,17 +1,39 @@
 @use "../../utilities/effects";
+@use "../../config/colors";
 
 .route__history {
   padding: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  @media (max-width: 60rem) {
+    grid-template-columns: 1fr;
+  }
   align-items: stretch;
   gap: 1rem;
   &_map {
     @include effects.shadow;
     border-radius: 4px;
     overflow: hidden;
+    min-height: 20vh;
     & button {
       display: none;
+    }
+  }
+}
+
+.history {
+  &-lines {
+    padding-left: 1rem;
+  }
+  &-special {
+    color: colors.$primary;
+  }
+  &-link {
+    text-align: center;
+    margin-top: 1rem;
+    & > button {
+      border: none;
+      outline: 0;
     }
   }
 }

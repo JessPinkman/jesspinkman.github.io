@@ -17,7 +17,8 @@ export enum SkillType {
 
 export enum HistoryType {
   EDU = "education",
-  JOB = "work experience",
+  JOB = "work",
+  SIDE = "Side Project",
 }
 
 export enum Country {

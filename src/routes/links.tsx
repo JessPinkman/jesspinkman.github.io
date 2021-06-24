@@ -9,25 +9,28 @@ interface LinkT {
   inMenu: boolean;
 }
 
-const links: LinkT[] = [
-  {
-    label: "Home",
-    to: "/",
-    Render: Home,
-    inMenu: false,
-  },
-  {
-    label: "skills",
-    to: "/skills",
-    Render: SkillRoute,
-    inMenu: true,
-  },
-  {
-    label: "history",
-    to: "/history",
-    Render: HistoryRoute,
-    inMenu: true,
-  },
-];
+const skillLink = {
+  label: "skills",
+  to: "/skills",
+  Render: SkillRoute,
+  inMenu: true,
+};
 
+const homeLink = {
+  label: "Home",
+  to: "/",
+  Render: Home,
+  inMenu: false,
+};
+
+const backgroundLink = {
+  label: "background",
+  to: "/background",
+  Render: HistoryRoute,
+  inMenu: true,
+};
+
+const links: LinkT[] = [homeLink, skillLink, backgroundLink];
+
+export { homeLink, skillLink, backgroundLink };
 export default links;

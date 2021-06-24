@@ -17,7 +17,7 @@ const HistoryRoute = () => {
       <div className="route__history_list card__list">
         {history.map((h) => (
           <HistoryCard
-            key={h.title}
+            key={+h.start}
             history={h}
             active={h === selected}
             handleClick={handleClick}

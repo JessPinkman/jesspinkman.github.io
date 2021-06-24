@@ -9,10 +9,11 @@
 }
 
 .card {
+  user-select: none;
   padding: 1rem;
   border-radius: 4px;
   @include effects.shadow;
-  background-color: rgba(191, 191, 252, 0.3);
+  background-color: colors.$secondary;
   animation: 200ms smoothIn ease-in 0s 1 forwards;
   &.active {
     background-color: colors.$active;
@@ -22,11 +23,26 @@
     text-align: left;
     font-weight: 700;
   }
+  &__subtext {
+    &.secondary {
+      color: rgb(157, 64, 233);
+    }
+    &.ternary {
+      color: rgb(28, 66, 36);
+    }
+    color: rgb(226, 86, 21);
+    font-size: 0.75rem;
+    font-style: italic;
+    text-transform: capitalize;
+    margin-top: 0.125rem;
+  }
   &__text {
     text-align: center;
   }
   &-history {
     transition: 200ms filter;
+    cursor: pointer;
+
     &_content {
       max-height: 0;
       overflow: hidden;
@@ -34,12 +50,11 @@
     &.active {
       flex-grow: 1;
       & > .card-history_content {
-        max-height: 10rem;
+        max-height: 20rem;
       }
     }
     &:not(.active) {
       &:hover {
-        cursor: pointer;
         filter: brightness(0.7);
       }
     }
@@ -51,6 +66,8 @@
       justify-content: space-between;
       &_company {
         text-align: right;
+        font-style: italic;
+        color: colors.$primary;
       }
     }
     &_content {

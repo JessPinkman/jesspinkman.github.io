@@ -1,12 +1,12 @@
 import useMapHook from "./useMapHook";
 import { WithHistorySelection } from "./HistoryRoute";
 import Marker from "./Marker";
-import entities from "../../data/history/entities";
 import { useEffect } from "react";
 import { fromLonLat } from "ol/proj";
 import history from "../../data/history/history";
+import locations from "../../data/history/locations";
 
-const MapTile = ({ selected, handleClick }: WithHistorySelection) => {
+const MapTile = ({ selected }: WithHistorySelection) => {
   const { hookRef, vector, view } = useMapHook();
 
   useEffect(() => {
@@ -18,12 +18,13 @@ const MapTile = ({ selected, handleClick }: WithHistorySelection) => {
 
   return (
     <div ref={hookRef} className="route__history_map">
-      {entities.map((e) => (
+      {locations.map((loc) => (
         <Marker
-          coord={e.location.coord}
+          key={loc.city}
+          coord={loc.coord}
           vector={vector}
           view={view}
-          isFocus={e === selected?.at}
+          isFocus={loc === selected?.location}
         />
       ))}
     </div>
@@ -31,7 +32,7 @@ const MapTile = ({ selected, handleClick }: WithHistorySelection) => {
 };
 
 export const initialViewSettings = {
-  center: fromLonLat(history[0].at.location.coord),
+  center: fromLonLat(history[0].location.coord),
   zoom: 8,
 };
 

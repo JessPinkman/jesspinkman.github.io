@@ -1,3 +1,4 @@
+import { HistoryType } from "../../types/enums";
 import { History } from "../../types/types";
 
 interface IProps {
@@ -23,16 +24,44 @@ const HistoryCard = ({ history, active, handleClick }: IProps) => {
               history.end
             )}/${history.end.getFullYear()}`}</span>
           ) : (
-            " ~"
+            " ~ On going"
           )}
         </div>
-        <div className="card__label card-history_header_company">
-          {history.at.name}
+        <div className="card-history_header_company">{history.at.name}</div>
+        <div
+          className={`card__subtext ${
+            history.type === HistoryType.SIDE ? "secondary" : ""
+          } ${history.type === HistoryType.EDU ? "ternary" : ""}`}
+        >
+          {history.type}
         </div>
       </div>
       {history.description && (
         <div className="card-history_content">
-          <history.description />
+          <h4 className="history-main">{history.description.main}</h4>
+          {history.description.lines && (
+            <ul className="history-lines">
+              {history.description.lines.map((line) => (
+                <li>{line}</li>
+              ))}
+            </ul>
+          )}
+          {history.description.special && (
+            <div className="history-special">
+              Special Achievement: {history.description.special}
+            </div>
+          )}
+          {history.description.link && (
+            <div className="history-link">
+              <a
+                href={history.description.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button>LINK</button>
+              </a>
+            </div>
+          )}
         </div>
       )}
     </div>

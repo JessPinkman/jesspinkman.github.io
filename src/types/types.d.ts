@@ -17,14 +17,13 @@ export interface History {
   start: Date;
   end?: Date;
   description: Description;
-  special?: string;
   at: Entity;
+  location: Location;
+  type: HistoryType;
 }
 
 export interface Entity {
   name: string;
-  location: Location;
-  type: HistoryType;
   contact?: ContactPerson;
 }
 
@@ -34,6 +33,16 @@ export interface ContactPerson {
 }
 interface Description {
   main: string;
-  lines: string[];
+  lines?: string[];
   link?: string;
+  special?: string;
+}
+
+export interface Project {
+  title: string;
+  at: Entity;
+  description: Description;
+  link: string;
+  img: string;
+  stack: Skill[];
 }

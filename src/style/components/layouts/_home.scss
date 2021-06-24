@@ -10,6 +10,7 @@
       grid-template-columns: 1fr;
     }
     &_tile {
+      text-transform: capitalize;
       height: 100%;
       padding: 1rem;
       text-align: center;

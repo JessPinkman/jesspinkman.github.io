@@ -51,7 +51,7 @@ const Marker = ({ coord, vector, view, isFocus }: Props) => {
             },
             () =>
               view.animate({
-                zoom: 8,
+                zoom: 9,
               })
           )
       );

@@ -70,7 +70,7 @@ const skills: Skill[] = [
   {
     title: "Create React App",
     type: SkillType.JS,
-    level: Level.INTERMEDIATE,
+    level: Level.PROFICIENT,
   },
 ];
 

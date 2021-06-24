@@ -1,6 +1,14 @@
 @use "../utilities/effects";
+@use "./colors";
 
 button {
+  background-color: colors.$primary;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  &:hover {
+    cursor: pointer;
+  }
   transition: 200ms filter;
   @include effects.shadow;
   &:hover {

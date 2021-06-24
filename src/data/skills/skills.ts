@@ -6,8 +6,8 @@ import SpokenLanguages from "./Language";
 import BusinessSkills from "./Business";
 
 const skills: Skill[] = [
-  ...PHPSkills,
   ...JSSkills,
+  ...PHPSkills,
   ...OtherSkills,
   ...SpokenLanguages,
   ...BusinessSkills,
