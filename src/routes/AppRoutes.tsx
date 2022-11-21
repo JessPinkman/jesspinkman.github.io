@@ -1,14 +1,14 @@
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import links, { homeLink } from "./links";
 
 const AppRoutes = () => {
   return (
-    <Switch>
+    <Routes>
       {links.map((link) => (
-        <Route path={link.to} key={link.to} component={link.Render} exact />
+        <Route path={link.to} key={link.to} element={link.Render()} />
       ))}
-      <Route path="*" component={homeLink.Render} />
-    </Switch>
+      <Route path="*" element={homeLink.Render()} />
+    </Routes>
   );
 };
 

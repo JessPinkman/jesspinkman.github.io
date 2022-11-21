@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { MutableRefObject, useState } from "react";
 import { Level, SkillType } from "../../types/enums";
 import useSkillChart from "./useSkillChart";
 import useSkillList from "./useSkillList";
@@ -8,8 +7,7 @@ const SkillRoute = () => {
   const [selectedType, setSelectedType] = useState<SkillType>(SkillType.JS);
 
   const skillList = useSkillList(selectedType);
-
-  const { nodeRef } = useSkillChart(skillList);
+  const nodeRef = useSkillChart(skillList);
 
   const labels = Object.values(SkillType);
 
@@ -50,7 +48,11 @@ const SkillRoute = () => {
           <h3 className="ta--center mt:2">... and getting better every day</h3>
         </div>
         <div className="skill__chart_grid_chart">
-          <canvas ref={nodeRef} width={300} height={300} />
+          <canvas
+            ref={nodeRef as MutableRefObject<HTMLCanvasElement>}
+            width={300}
+            height={300}
+          />
         </div>
       </div>
     </div>

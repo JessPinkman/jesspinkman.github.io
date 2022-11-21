@@ -4,15 +4,23 @@ import SkillChart from "../../charts/SkillChart";
 import type { Skill } from "../../types/types";
 
 const useSkillChart = (skillList: Skill[]) => {
-  const nodeRef = useRef<HTMLCanvasElement>(null!);
-  const chartRef = useRef<BaseChart>(null!);
+  const nodeRef = useRef<HTMLCanvasElement>();
+  const chartRef = useRef<BaseChart>();
 
   useEffect(() => {
-    chartRef.current = new SkillChart(nodeRef.current.getContext("2d")!);
-    return () => chartRef.current.destroy();
+    if (nodeRef.current) {
+      const chart = new SkillChart(
+        nodeRef.current.getContext("2d") as CanvasRenderingContext2D
+      );
+      chartRef.current = chart;
+      return () => chart.destroy();
+    }
   }, []);
 
   useEffect(() => {
+    if (!chartRef.current) {
+      return;
+    }
     chartRef.current.data.datasets = [
       {
         backgroundColor: "#52e08b",
@@ -24,7 +32,7 @@ const useSkillChart = (skillList: Skill[]) => {
     chartRef.current.update();
   }, [skillList]);
 
-  return { nodeRef };
+  return nodeRef;
 };
 
 export default useSkillChart;

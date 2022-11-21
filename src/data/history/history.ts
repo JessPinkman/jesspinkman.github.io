@@ -21,8 +21,8 @@ const history: History[] = [
     type: HistoryType.JOB,
     at: volvo,
     location: lyon,
-    start: new Date("2006/12"),
-    end: new Date("2008/04"),
+    start: new Date("2006/12/01"),
+    end: new Date("2008/04/01"),
     description: {
       main: "Use language skills to coordinate assistance for VOLVO Group's customers in Europe when breakdowns occurs.",
     },
@@ -32,8 +32,8 @@ const history: History[] = [
     at: volvo,
     location: lyon,
     type: HistoryType.JOB,
-    start: new Date("2008/04"),
-    end: new Date("2011/08"),
+    start: new Date("2008/04/01"),
+    end: new Date("2011/08/01"),
     description: {
       main: "Management of 10 to 15 team members",
       lines: [
@@ -50,8 +50,8 @@ const history: History[] = [
     at: volvo,
     location: lyon,
     type: HistoryType.JOB,
-    start: new Date("2011/09"),
-    end: new Date("2012/12"),
+    start: new Date("2011/09/01"),
+    end: new Date("2012/12/01"),
     description: {
       main: "Establish worldwide price list for truck spare parts",
       lines: [
@@ -66,8 +66,8 @@ const history: History[] = [
     at: volvo,
     location: lyon,
     type: HistoryType.JOB,
-    start: new Date("2013/01"),
-    end: new Date("2014/12"),
+    start: new Date("2013/01/01"),
+    end: new Date("2014/12/01"),
     description: {
       main: "Global Product Manager for spare parts",
       lines: [
@@ -83,8 +83,8 @@ const history: History[] = [
     at: adda,
     location: kaohsiung,
     type: HistoryType.JOB,
-    start: new Date("2015/10"),
-    end: new Date("2016/08"),
+    start: new Date("2015/10/01"),
+    end: new Date("2016/08/01"),
     description: {
       main: "Responsible for the Automotive Business Development",
       lines: [
@@ -101,8 +101,8 @@ const history: History[] = [
     at: kapsea,
     location: kaohsiung,
     type: HistoryType.JOB,
-    start: new Date("2017/04"),
-    end: new Date("2018/12"),
+    start: new Date("2017/04/01"),
+    end: new Date("2018/12/01"),
     description: {
       main: "Responsible for Marketing Strategy and Operational Marketing",
       lines: [
@@ -115,7 +115,7 @@ const history: History[] = [
   {
     title: "Web Developer",
     at: osalad,
-    start: new Date("2020/01"),
+    start: new Date("2020/01/01"),
     location: taichung,
     type: HistoryType.SIDE,
     description: {
@@ -134,7 +134,7 @@ const history: History[] = [
     at: kapsea,
     location: taichung,
     type: HistoryType.JOB,
-    start: new Date("2019/04"),
+    start: new Date("2019/04/01"),
     description: {
       main: "Design, Develop and Maintain Web Apps",
       lines: [

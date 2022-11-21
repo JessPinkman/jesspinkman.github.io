@@ -42,7 +42,7 @@ const HistoryCard = ({ history, active, handleClick }: IProps) => {
           {history.description.lines && (
             <ul className="history-lines">
               {history.description.lines.map((line) => (
-                <li>{line}</li>
+                <li key={line}>{line}</li>
               ))}
             </ul>
           )}
