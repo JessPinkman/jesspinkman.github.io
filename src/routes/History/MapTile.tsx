@@ -1,29 +1,28 @@
 import useMapHook from "./useMapHook";
-import { WithHistorySelection } from "./HistoryRoute";
 import Marker from "./Marker";
 import { useEffect } from "react";
 import { fromLonLat } from "ol/proj";
 import history from "../../data/history/history";
 import locations from "../../data/history/locations";
+import { History } from "../../types/types";
 
-const MapTile = ({ selected }: WithHistorySelection) => {
+const MapTile: React.FC<{ selected?: History }> = ({ selected }) => {
   const { hookRef, vector, view } = useMapHook();
 
   useEffect(() => {
     if (!selected) {
-      view.animate({ ...initialViewSettings });
+      view.current.animate({ ...initialViewSettings });
     }
-    // eslint-disable-next-line
-  }, [selected]);
+  }, [selected, view]);
 
   return (
-    <div ref={hookRef} className="route__history_map">
+    <div ref={hookRef} className="overflow-hidden shadow-md rounded-md">
       {locations.map((loc) => (
         <Marker
           key={loc.city}
           coord={loc.coord}
-          vector={vector}
-          view={view}
+          vector={vector.current}
+          view={view.current}
           isFocus={loc === selected?.location}
         />
       ))}

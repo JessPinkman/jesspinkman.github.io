@@ -30,7 +30,7 @@ const backgroundLink = {
   inMenu: true,
 };
 
-const links: LinkT[] = [homeLink, skillLink, backgroundLink];
+const links: LinkT[] = [skillLink, backgroundLink];
 
 export { homeLink, skillLink, backgroundLink };
 export default links;

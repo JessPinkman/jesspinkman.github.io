@@ -1,4 +1,3 @@
-import "./style/app.scss";
 import { Link, useLocation } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import links from "./routes/links";
@@ -7,7 +6,7 @@ import AppRoutes from "./routes/AppRoutes";
 function App() {
   const location = useLocation();
   return (
-    <>
+    <div className="flex flex-col min-h-screen bg-inactive text-white">
       <NavBar>
         {links
           .filter((link) => link.inMenu)
@@ -15,19 +14,21 @@ function App() {
             <Link
               key={link.to}
               to={link.to}
-              className={`depends_on_responsive nav_menu_link ${
-                location.pathname === link.to ? "active" : null
+              className={`transition-colors ${
+                location.pathname === link.to
+                  ? "contrast-150 saturate-150"
+                  : "hover:contrast-125 contrast-75"
               }`}
             >
               {link.label}
             </Link>
           ))}
       </NavBar>
-      <main>
+      <main className="p-8 flex-1">
         <AppRoutes />
       </main>
       <footer />
-    </>
+    </div>
   );
 }
 

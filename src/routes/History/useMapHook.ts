@@ -12,19 +12,19 @@ const useMapHook = () => {
   const hookRef = useRef<HTMLDivElement>(null!);
   const mapRef = useRef<Map>(null!);
 
-  const { current: vectorSource } = useRef(
+  const vector = useRef(
     new Vector({
       features: [],
     })
   );
 
-  const { current: vectorLayer } = useRef(
+  const vectorLayer = useRef(
     new VectorLayer({
-      source: vectorSource,
+      source: vector.current,
     })
   );
 
-  const { current: view } = useRef(
+  const view = useRef(
     new View({
       center: fromLonLat([60, 35]),
       zoom: 1,
@@ -35,14 +35,14 @@ const useMapHook = () => {
 
   useEffect(() => {
     mapRef.current = new Map({
-      view,
-      layers: [new TileLayer({ source: new OSM() }), vectorLayer],
+      view: view.current,
+      layers: [new TileLayer({ source: new OSM() }), vectorLayer.current],
       target: hookRef.current,
       controls: defaults({ attribution: false }),
     });
-  }, [view, vectorLayer]);
+  }, []);
 
-  return { hookRef, mapRef, vector: vectorSource, view };
+  return { hookRef, mapRef, vector, view };
 };
 
 export default useMapHook;
